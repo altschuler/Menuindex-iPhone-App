@@ -10,14 +10,29 @@
 
 @implementation SearchResultModel
 
-@synthesize resultId;
-@synthesize title;
+@synthesize restaurantId;
+@synthesize name;
+@synthesize nameExtension;
+@synthesize hasTakeaway;
+@synthesize hasDelivery;
+@synthesize isOpen;
+
+@synthesize addressStreet;
+@synthesize addressHouseNumber;
+@synthesize addressZip;
+@synthesize addressCity;
+@synthesize addressLatitude;
+@synthesize addressLongitude;
+
+@synthesize telephoneNumber;
+@synthesize telephoneCountryCode;
+@synthesize telephoneNote;
 
 - (id)initWithTitle:(NSString*)titleOrNil andResultId:(NSString*)resultIdOrNil
 {
     if ([self init]) {
-        resultId = resultIdOrNil;
-        title = titleOrNil;
+        restaurantId = resultIdOrNil;
+        name = titleOrNil;
     }
     
     return self;

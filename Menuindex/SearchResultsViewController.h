@@ -17,6 +17,8 @@
     SearchService* searchService;
     NSArray* searchResults;
     NSString* initialSearchQuery;
+    
+    IBOutlet UITableView *resultsTableView;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchQuery:(NSString*)searchQueryOrNil;

@@ -9,16 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "DetailsModel.h"
 #import "SearchServiceDelegate.h"
+#import "ResultParser.h"
 
-@interface SearchService : NSObject
+@interface SearchService : NSObject <NSXMLParserDelegate>
 {
     id <SearchServiceDelegate> delegate;
+    ResultParser* resultParser;
 }
 
 @property (retain) id <SearchServiceDelegate> delegate;
 
 - (void) searchForQuery:(NSString*)query;
 
-- (DetailsModel*) getDetailsFromId:(NSString*)resultId;
+- (void) getDetailsFromId:(NSString*)resultId;
 
 @end

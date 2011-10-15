@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchService.h"
+#import "SearchServiceDelegate.h"
+#import "SearchResultModel.h"
 
-@interface RestaurantDetailsViewController : UIViewController
+@interface RestaurantDetailsViewController : UIViewController <SearchServiceDelegate>{
+    IBOutlet UILabel *nameLabel;
+    SearchService* searchService;
+}
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchResultModel:(SearchResultModel*)srm;
 
 @end

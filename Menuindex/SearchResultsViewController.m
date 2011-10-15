@@ -10,6 +10,7 @@
 #import "SearchService.h"
 #import "SearchResultModel.h"
 #import "SearchResultTableViewCellController.h"
+#import "RestaurantDetailsViewController.h"
 
 @implementation SearchResultsViewController
 
@@ -18,13 +19,14 @@
     [super viewDidLoad];
     
     //Do we have a query to search for?
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
     if (initialSearchQuery != nil)
     {
         [searchTextField setText:initialSearchQuery];
-        [searchService searchForQuery:@"abe"];
+        [searchService searchForQuery:initialSearchQuery];
     }
     
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchQuery:(NSString *)searchQueryOrNil
@@ -46,6 +48,8 @@
 -(void)didRecieveSearchResult:(NSArray *)result
 {
     searchResults = result;
+    
+    [resultsTableView reloadData];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,6 +64,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    SearchResultModel* srm = [searchResults objectAtIndex:indexPath.row];
+    
+    RestaurantDetailsViewController*  rdvc = [[RestaurantDetailsViewController alloc] initWithNibName:@"RestaurantDetailsView" bundle:nil searchResultModel:srm];
+
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    [[self navigationController] pushViewController:rdvc animated:YES];
     
 }
 
@@ -96,8 +107,8 @@
     
     SearchResultModel* searchResultModel = [searchResults objectAtIndex:indexPath.row];
     
-    cell.nameLabel.text = searchResultModel.title;
-    cell.adressLabel.text = searchResultModel.resultId;
+    cell.nameLabel.text = searchResultModel.name;
+    cell.adressLabel.text = searchResultModel.restaurantId;
     
     return cell;
 }
@@ -114,6 +125,8 @@
 {
     [searchTextField release];
     searchTextField = nil;
+    [resultsTableView release];
+    resultsTableView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -127,6 +140,7 @@
 
 - (void)dealloc {
     [searchTextField release];
+    [resultsTableView release];
     [super dealloc];
 }
 @end

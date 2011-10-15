@@ -7,16 +7,30 @@
 //
 
 #import "RestaurantDetailsViewController.h"
+#import "SearchResultModel.h"
 
 @implementation RestaurantDetailsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchResultModel:(SearchResultModel*)srm
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        searchService = [[SearchService alloc] init];
+        
+        [searchService setDelegate:self];
+        
+        if (srm != nil)
+        {
+            [nameLabel setText:srm.name];
+            [searchService getDetailsFromId:srm.restaurantId];
+        }
     }
     return self;
+}
+
+-(void)didRecieveRestaurantDetails:(DetailsModel *)details
+{
+    [nameLabel setText:details.name];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,4 +62,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)dealloc {
+    [nameLabel release];
+    [super dealloc];
+}
 @end

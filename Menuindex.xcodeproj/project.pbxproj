@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		137D1F5F1449E604007ADA9E /* ResultParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 137D1F5E1449E604007ADA9E /* ResultParser.m */; };
 		13BC20A614479B8500A615D9 /* RestaurantDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */; };
-		13BC20A714479B8500A615D9 /* RestaurantDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BC20A514479B8500A615D9 /* RestaurantDetailsViewController.xib */; };
+		13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */; };
 		13BFEAFE1443A1360090B7D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BFEAFD1443A1360090B7D9 /* UIKit.framework */; };
 		13BFEB001443A1360090B7D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BFEAFF1443A1360090B7D9 /* Foundation.framework */; };
 		13BFEB021443A1360090B7D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BFEB011443A1360090B7D9 /* CoreGraphics.framework */; };
@@ -36,9 +37,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		137D1F5D1449E604007ADA9E /* ResultParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultParser.h; sourceTree = "<group>"; };
+		137D1F5E1449E604007ADA9E /* ResultParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultParser.m; sourceTree = "<group>"; };
 		13BC20A314479B8500A615D9 /* RestaurantDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailsViewController.h; sourceTree = "<group>"; };
 		13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailsViewController.m; sourceTree = "<group>"; };
-		13BC20A514479B8500A615D9 /* RestaurantDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantDetailsViewController.xib; sourceTree = "<group>"; };
+		13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantDetailsView.xib; sourceTree = "<group>"; };
 		13BFEAF91443A1360090B7D9 /* Menuindex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menuindex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BFEAFD1443A1360090B7D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		13BFEAFF1443A1360090B7D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -156,7 +159,7 @@
 				13BFEB0F1443A1360090B7D9 /* MainWindow.xib */,
 				13BFEB181443A1360090B7D9 /* SearchView.xib */,
 				13BFEB1B1443A1360090B7D9 /* MapView.xib */,
-				13BC20A514479B8500A615D9 /* RestaurantDetailsViewController.xib */,
+				13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */,
 				13BFEB271443A3000090B7D9 /* FavoritesView.xib */,
 				13BFEB2E1443AE020090B7D9 /* SearchResultsView.xib */,
 				13E81DC41444C4010035F897 /* SearchResultTableCell.xib */,
@@ -214,6 +217,8 @@
 				13E81DB8144494B90035F897 /* SearchService.h */,
 				13E81DB9144494B90035F897 /* SearchService.m */,
 				13E81DC21444A5150035F897 /* SearchServiceDelegate.h */,
+				137D1F5D1449E604007ADA9E /* ResultParser.h */,
+				137D1F5E1449E604007ADA9E /* ResultParser.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -273,7 +278,7 @@
 				13BFEB2B1443ABD50090B7D9 /* MenuindexLogo.png in Resources */,
 				13BFEB301443AE020090B7D9 /* SearchResultsView.xib in Resources */,
 				13E81DC51444C4010035F897 /* SearchResultTableCell.xib in Resources */,
-				13BC20A714479B8500A615D9 /* RestaurantDetailsViewController.xib in Resources */,
+				13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +303,7 @@
 				13E81DBF144494B90035F897 /* SearchService.m in Sources */,
 				13E81DC81444C7C80035F897 /* SearchResultTableViewCellController.m in Sources */,
 				13BC20A614479B8500A615D9 /* RestaurantDetailsViewController.m in Sources */,
+				137D1F5F1449E604007ADA9E /* ResultParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
