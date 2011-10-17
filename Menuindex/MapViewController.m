@@ -16,17 +16,30 @@
     if (self)
     {
         self.title = @"Kort";
+        
+        annotationMap = [[AnnotationMap alloc] initWithMapViewFrame:self.view.frame delegate:self];
+        [self.view insertSubview:annotationMap.annotationMapView belowSubview:centerButton];
     }
     return self;
 }
 
-/*
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    
+}
+
+- (IBAction)centerButtonDidTouch:(id)sender
+{
+    annotationMap.annotationMapView.showsUserLocation = YES;
+}
+
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
-*/
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

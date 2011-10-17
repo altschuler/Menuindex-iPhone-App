@@ -7,20 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "SearchServiceDelegate.h"
 #import "SearchService.h"
+#import "AnnotationMap.h"
 
-@interface SearchResultsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SearchServiceDelegate, UITextFieldDelegate>
+@interface SearchResultsViewController : UIViewController<UITableViewDataSource, 
+UITableViewDelegate, 
+SearchServiceDelegate, 
+UITextFieldDelegate,
+AnnotationMapDelegate>
 {
     IBOutlet UITextField *searchTextField;
+    IBOutlet UITableView *resultsTableView;
     
     SearchService* searchService;
     NSArray* searchResults;
     NSString* initialSearchQuery;
+    AnnotationMap* annotationMap;
+    NSMutableArray* mapAnnotations;
     
-    IBOutlet UITableView *resultsTableView;
 }
+- (IBAction)mapViewButtonDidTouch:(id)sender;
+
+- (IBAction)listViewButtonDidTouch:(id)sender;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchQuery:(NSString*)searchQueryOrNil;
+
+-(void)showFilterModal;
 
 @end

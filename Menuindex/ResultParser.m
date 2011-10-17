@@ -61,6 +61,10 @@
         SearchResultModel* srm = [resultList lastObject];
         srm.addressZip = [self stringFromDict:attributeDict key:@"Zip"];    
         srm.addressStreet = [self stringFromDict:attributeDict key:@"Street"];
+        srm.addressHouseNumber = [self stringFromDict:attributeDict key:@"HouseNumber"];
+        srm.addressCity = [self stringFromDict:attributeDict key:@"City"]; 
+        srm.latitude = [[self stringFromDict:attributeDict key:@"Latitude"] doubleValue];
+        srm.longitude = [[self stringFromDict:attributeDict key:@"Longitude"] doubleValue]; 
         
     }
 }

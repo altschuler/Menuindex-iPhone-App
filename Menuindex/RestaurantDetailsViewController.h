@@ -16,7 +16,6 @@
     SearchService* searchService;
 }
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchResultModel:(SearchResultModel*)srm;
 
 @end

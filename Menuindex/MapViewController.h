@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AnnotationMap.h"
+#import "AnnotationMapDelegate.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<AnnotationMapDelegate>
+{
+    AnnotationMap* annotationMap;
+    IBOutlet UIButton* centerButton;
+}
+
+- (IBAction)centerButtonDidTouch:(id)sender;
 
 @end

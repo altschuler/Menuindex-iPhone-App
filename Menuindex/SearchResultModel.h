@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Locatable.h"
 
-@interface SearchResultModel : NSObject
+@interface SearchResultModel : NSObject <Locatable>
 {
     NSString* restaurantId;
     NSString* name;
@@ -28,7 +29,12 @@
     NSString* telephoneCountryCode;
     NSString* telephoneNote;
     
+    double latitude;
+    double longitude;
 }
+
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
 
 @property (nonatomic, copy) NSString* restaurantId;
 @property (nonatomic, copy) NSString* name;
@@ -41,8 +47,6 @@
 @property (nonatomic, copy) NSString* addressHouseNumber;
 @property (nonatomic, copy) NSString* addressZip;
 @property (nonatomic, copy) NSString* addressCity;
-@property (nonatomic, copy) NSString* addressLatitude;
-@property (nonatomic, copy) NSString* addressLongitude;
 
 @property (nonatomic, copy) NSString* telephoneNumber;
 @property (nonatomic, copy) NSString* telephoneCountryCode;

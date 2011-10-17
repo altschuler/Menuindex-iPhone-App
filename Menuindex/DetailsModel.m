@@ -12,10 +12,8 @@
 
 @implementation DetailsModel
 
-@synthesize name;
-@synthesize description;
-@synthesize openingHours;
 @synthesize menuCards;
+@synthesize openingHours;
 
 - (id)init
 {

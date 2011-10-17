@@ -21,12 +21,13 @@
 @synthesize addressHouseNumber;
 @synthesize addressZip;
 @synthesize addressCity;
-@synthesize addressLatitude;
-@synthesize addressLongitude;
 
 @synthesize telephoneNumber;
 @synthesize telephoneCountryCode;
 @synthesize telephoneNote;
+
+@synthesize latitude;
+@synthesize longitude;
 
 - (id)initWithTitle:(NSString*)titleOrNil andResultId:(NSString*)resultIdOrNil
 {

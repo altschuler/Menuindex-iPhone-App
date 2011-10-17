@@ -11,21 +11,21 @@
 #import "SearchResultModel.h"
 #import "SearchResultTableViewCellController.h"
 #import "RestaurantDetailsViewController.h"
+#import "RestaurantMapAnnotation.h"
+#import <MapKit/MapKit.h>
 
 @implementation SearchResultsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
+    annotationMap = [[AnnotationMap alloc] initWithMapViewFrame:resultsTableView.frame delegate:self];
+    [self.view insertSubview:annotationMap.annotationMapView atIndex:20];
+    annotationMap.annotationMapView.alpha = 0;
     
     //Do we have a query to search for?
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
-    if (initialSearchQuery != nil)
-    {
-        [searchTextField setText:initialSearchQuery];
-        [searchService searchForQuery:initialSearchQuery];
-    }
     
 }
 
@@ -36,18 +36,60 @@
     {
         self.title = @"Søgeresultat";
         
+        mapAnnotations = [[NSMutableArray alloc] init];
+        
         searchService = [[SearchService alloc] init];
         [searchService setDelegate:self];
         
         initialSearchQuery = searchQueryOrNil;
         [initialSearchQuery retain];
+        
+        UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filtrér" style:UIBarButtonItemStylePlain target:self action:@selector(showFilterModal)];          
+        self.navigationItem.rightBarButtonItem = filterButton;
+        [filterButton release];
     }
     return self;
+}
+
+-(void)showFilterModal
+{
+    
+}
+
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    //NSLog(view.description);
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    if (initialSearchQuery != nil)
+    {
+        [searchTextField setText:initialSearchQuery];
+        [searchService searchForQuery:initialSearchQuery];
+    }
+}
+
+- (IBAction)mapViewButtonDidTouch:(id)sender 
+{
+    [UIView beginAnimations:nil context:NULL];
+    annotationMap.annotationMapView.alpha = 1;
+    [UIView commitAnimations];
+}
+
+- (IBAction)listViewButtonDidTouch:(id)sender 
+{
+    [UIView beginAnimations:nil context:NULL];
+    annotationMap.annotationMapView.alpha = 0;
+    [UIView commitAnimations];
 }
 
 -(void)didRecieveSearchResult:(NSArray *)result
 {
     searchResults = result;
+    
+    [annotationMap setNewAnnotations:searchResults];
+    [annotationMap fitZoomToAnnotations];
     
     [resultsTableView reloadData];
 }
@@ -93,8 +135,6 @@
     {
         NSArray* nibArray = [[NSBundle mainBundle] loadNibNamed:@"SearchResultTableCell" owner:nil options:nil];
         
-        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
-        
         for (id nib in nibArray)
         {
             if ([nib isKindOfClass:[SearchResultTableViewCellController class]])
@@ -108,7 +148,8 @@
     SearchResultModel* searchResultModel = [searchResults objectAtIndex:indexPath.row];
     
     cell.nameLabel.text = searchResultModel.name;
-    cell.adressLabel.text = searchResultModel.restaurantId;
+    NSString* address = [[NSString alloc] initWithFormat:@"%@ %@, %@ %@",searchResultModel.addressStreet,searchResultModel.addressHouseNumber,searchResultModel.addressZip,searchResultModel.addressCity];
+    cell.adressLabel.text = address;
     
     return cell;
 }

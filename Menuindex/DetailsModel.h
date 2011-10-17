@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SearchResultModel.h"
 
-@interface DetailsModel : NSObject
+@interface DetailsModel : SearchResultModel
 {
-    NSString* name;
-    NSString* description;
-    NSString* openingHours;
+    NSArray* openingHours;
     NSArray* menuCards;
 }
+
+@property (nonatomic, retain) NSArray* menuCards;
+@property (nonatomic, retain) NSArray* openingHours;
 
 -(NSString*) getGroupTitleForMenuCard:(NSInteger)menuCardId groupId:(NSInteger)groupIdOrNil;
 
@@ -23,14 +25,5 @@
 -(NSArray*) getEntriesForMenuCardGroup:(NSInteger)menuCardId groupId:(NSInteger)groupIdOrNil;
 
 -(NSString*) getTitleForMenuCard:(NSInteger)menuCardId;
-
-
-@property (nonatomic, copy) NSString* name;
-
-@property (nonatomic, copy) NSString* description;
-
-@property (nonatomic, copy) NSString* openingHours;
-
-@property (nonatomic, retain) NSArray* menuCards;
 
 @end
