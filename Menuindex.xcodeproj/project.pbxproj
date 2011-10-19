@@ -13,6 +13,8 @@
 		137D1F6C144AE26D007ADA9E /* AnnotationMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 137D1F6B144AE26D007ADA9E /* AnnotationMap.m */; };
 		137D1F73144B25D5007ADA9E /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137D1F72144B25D5007ADA9E /* FilterView.xib */; };
 		137D1F76144B89CE007ADA9E /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137D1F75144B89CD007ADA9E /* FilterViewController.m */; };
+		13841716144F45FF00B07869 /* Favorites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13841715144F45FF00B07869 /* Favorites.plist */; };
+		139AEB8B144CCEBF00FA1CD3 /* SearchFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */; };
 		13BC20A614479B8500A615D9 /* RestaurantDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */; };
 		13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */; };
 		13BFEAFE1443A1360090B7D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BFEAFD1443A1360090B7D9 /* UIKit.framework */; };
@@ -54,6 +56,10 @@
 		137D1F72144B25D5007ADA9E /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		137D1F74144B89CD007ADA9E /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		137D1F75144B89CD007ADA9E /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		13841715144F45FF00B07869 /* Favorites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Favorites.plist; sourceTree = "<group>"; };
+		139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewDelegate.h; sourceTree = "<group>"; };
+		139AEB89144CCEBF00FA1CD3 /* SearchFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFilterModel.h; sourceTree = "<group>"; };
+		139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFilterModel.m; sourceTree = "<group>"; };
 		13BC20A314479B8500A615D9 /* RestaurantDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailsViewController.h; sourceTree = "<group>"; };
 		13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailsViewController.m; sourceTree = "<group>"; };
 		13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantDetailsView.xib; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 				13BFEB061443A1360090B7D9 /* InfoPlist.strings */,
 				13BFEB091443A1360090B7D9 /* main.m */,
 				13BFEB0B1443A1360090B7D9 /* Menuindex-Prefix.pch */,
+				13841715144F45FF00B07869 /* Favorites.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,6 +239,7 @@
 				13E81DC71444C7C80035F897 /* SearchResultTableViewCellController.m */,
 				137D1F74144B89CD007ADA9E /* FilterViewController.h */,
 				137D1F75144B89CD007ADA9E /* FilterViewController.m */,
+				139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */,
 			);
 			name = "Search Flow";
 			sourceTree = "<group>";
@@ -249,6 +257,8 @@
 				13E81DB4144494B90035F897 /* MenuCardModel.h */,
 				13E81DB6144494B90035F897 /* SearchResultModel.h */,
 				13E81DB7144494B90035F897 /* SearchResultModel.m */,
+				139AEB89144CCEBF00FA1CD3 /* SearchFilterModel.h */,
+				139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -322,6 +332,7 @@
 				13E81DC51444C4010035F897 /* SearchResultTableCell.xib in Resources */,
 				13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */,
 				137D1F73144B25D5007ADA9E /* FilterView.xib in Resources */,
+				13841716144F45FF00B07869 /* Favorites.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +361,7 @@
 				137D1F69144AD1BC007ADA9E /* RestaurantMapAnnotation.m in Sources */,
 				137D1F6C144AE26D007ADA9E /* AnnotationMap.m in Sources */,
 				137D1F76144B89CE007ADA9E /* FilterViewController.m in Sources */,
+				139AEB8B144CCEBF00FA1CD3 /* SearchFilterModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

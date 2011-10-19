@@ -6,13 +6,15 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
 #import "SearchResultsViewController.h"
 #import "SearchService.h"
 #import "SearchResultModel.h"
 #import "SearchResultTableViewCellController.h"
 #import "RestaurantDetailsViewController.h"
 #import "RestaurantMapAnnotation.h"
-#import <MapKit/MapKit.h>
+#import "FilterViewController.h"
+#import "SearchFilterModel.h"
 
 @implementation SearchResultsViewController
 
@@ -46,14 +48,24 @@
         
         UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filtrér" style:UIBarButtonItemStylePlain target:self action:@selector(showFilterModal)];          
         self.navigationItem.rightBarButtonItem = filterButton;
+        
         [filterButton release];
     }
     return self;
 }
 
+-(void)filterDidApply:(SearchFilterModel*)filter
+{
+    NSLog(@"Set filter: %d", filter.hasTakeaway);
+}
+
 -(void)showFilterModal
 {
+    FilterViewController* filterViewController = [[FilterViewController alloc] init];
     
+    [filterViewController setDelegate:self];
+    
+    [self.navigationController pushViewController:filterViewController animated:YES];
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view

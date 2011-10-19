@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "FilterViewDelegate.h"
 #import "SearchServiceDelegate.h"
 #import "SearchService.h"
 #import "AnnotationMap.h"
@@ -16,7 +17,8 @@
 UITableViewDelegate, 
 SearchServiceDelegate, 
 UITextFieldDelegate,
-AnnotationMapDelegate>
+AnnotationMapDelegate,
+FilterViewDelegate>
 {
     IBOutlet UITextField *searchTextField;
     IBOutlet UITableView *resultsTableView;
