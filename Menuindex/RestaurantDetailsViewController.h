@@ -10,12 +10,23 @@
 #import "SearchService.h"
 #import "SearchServiceDelegate.h"
 #import "SearchResultModel.h"
+#import "RestaurantDetailsModel.h"
 
-@interface RestaurantDetailsViewController : UIViewController <SearchServiceDelegate>{
-    IBOutlet UILabel *nameLabel;
+@interface RestaurantDetailsViewController : UIViewController <SearchServiceDelegate>
+{
+    IBOutlet UILabel* nameLabel;
+    IBOutlet UIButton* addToFavoritesButton;
+    IBOutlet UIView* favoriteIcon;
+    
     SearchService* searchService;
+    SearchResultModel* detailsModel;
+    NSString* restaurantId;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchResultModel:(SearchResultModel*)srm;
+-(void)updateUI;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil restaurantId:(NSString*)restaurantIdOrNil;
+
+- (IBAction)addToFavoritesButtonDidTouch:(id)sender;
 
 @end

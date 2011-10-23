@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DetailsModel.h"
+#import "RestaurantDetailsModel.h"
 
 @protocol SearchServiceDelegate <NSObject>
     
@@ -15,5 +15,5 @@
 -(void) didRecieveSearchResult: (NSArray*)result;
 
 @optional
--(void)didRecieveRestaurantDetails:(DetailsModel *)details;
+-(void)didRecieveRestaurantDetails:(RestaurantDetailsModel *)details;
 @end

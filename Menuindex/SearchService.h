@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DetailsModel.h"
+#import "RestaurantDetailsModel.h"
 #import "SearchServiceDelegate.h"
 #import "ResultParser.h"
 

@@ -10,7 +10,7 @@
 #import "SearchResultsViewController.h"
 #import "SearchService.h"
 #import "SearchResultModel.h"
-#import "SearchResultTableViewCellController.h"
+#import "SearchResultTableCellController.h"
 #import "RestaurantDetailsViewController.h"
 #import "RestaurantMapAnnotation.h"
 #import "FilterViewController.h"
@@ -120,11 +120,11 @@
 {
     SearchResultModel* srm = [searchResults objectAtIndex:indexPath.row];
     
-    RestaurantDetailsViewController*  rdvc = [[RestaurantDetailsViewController alloc] initWithNibName:@"RestaurantDetailsView" bundle:nil searchResultModel:srm];
+    RestaurantDetailsViewController*  rdvc = [[RestaurantDetailsViewController alloc] initWithNibName:@"RestaurantDetailsView" bundle:nil restaurantId:srm.restaurantId];
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    [[self navigationController] pushViewController:rdvc animated:YES];
+    [self.navigationController pushViewController:rdvc animated:YES];
     
 }
 
@@ -141,17 +141,17 @@
 {
     static NSString* reuseId = @"SearchResultCell";
     
-    SearchResultTableViewCellController* cell = (SearchResultTableViewCellController*)[tableView dequeueReusableCellWithIdentifier:reuseId];
+    SearchResultTableCellController* cell = (SearchResultTableCellController*)[tableView dequeueReusableCellWithIdentifier:reuseId];
     
     if (cell == nil)
     {
-        NSArray* nibArray = [[NSBundle mainBundle] loadNibNamed:@"SearchResultTableCell" owner:nil options:nil];
+        NSArray* cellViews = [[NSBundle mainBundle] loadNibNamed:@"TableCells" owner:nil options:nil];
         
-        for (id nib in nibArray)
+        for (id cellView in cellViews)
         {
-            if ([nib isKindOfClass:[SearchResultTableViewCellController class]])
+            if ([cellView isKindOfClass:[SearchResultTableCellController class]])
             {
-                cell = (SearchResultTableViewCellController*)nib;
+                cell = (SearchResultTableCellController*)cellView;
                 break;
             }
         }

@@ -11,6 +11,8 @@
 #import "MapViewController.h"
 #import "FavoritesViewController.h"
 
+#import "FavoritesController.h"
+
 @implementation MenuindexAppDelegate
 
 @synthesize window = _window;
@@ -18,6 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //Check for and create (if neccessary) the favorites.plist file
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString* dataPath = [documentsDirectory stringByAppendingPathComponent:@"Favorites.plist"];
+    
+    if ( ![[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
+        NSString* resourceaPath = [[NSBundle mainBundle] pathForResource:@"Favorites" ofType:@"plist"];
+        [[NSFileManager defaultManager] copyItemAtPath:resourceaPath toPath:dataPath error:NULL];
+    }
+    
     //Search Flow
     UIViewController* searchVC = [[SearchViewController alloc] initWithNibName:@"SearchView" bundle:nil];
     UINavigationController* searchNC = [[UINavigationController alloc] initWithRootViewController:searchVC];
@@ -31,6 +42,10 @@
     UINavigationController* favNC = [[UINavigationController alloc] initWithRootViewController:favVC];
     
     self.tabBarController.viewControllers = [[NSArray alloc] initWithObjects:searchNC,mapNC,favNC, nil];
+    
+    //for debugging. clear the favorites file.
+   // [[FavoritesController getInstance] writeFavoritesToDisk];
+    
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
@@ -47,10 +62,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
+    [[FavoritesController getInstance] writeFavoritesToDisk];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -69,11 +81,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
-     */
+    [[FavoritesController getInstance] writeFavoritesToDisk];
 }
 
 - (void)dealloc

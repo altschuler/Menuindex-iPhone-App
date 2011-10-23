@@ -8,10 +8,11 @@
 
 #import "RestaurantDetailsViewController.h"
 #import "SearchResultModel.h"
+#import "FavoritesController.h"
 
 @implementation RestaurantDetailsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchResultModel:(SearchResultModel*)srm
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil restaurantId:(NSString*)restaurantIdOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -19,18 +20,25 @@
         
         [searchService setDelegate:self];
         
-        if (srm != nil)
-        {
-            [nameLabel setText:srm.name];
-            [searchService getDetailsFromId:srm.restaurantId];
-        }
+        restaurantId = restaurantIdOrNil;
     }
     return self;
 }
 
--(void)didRecieveRestaurantDetails:(DetailsModel *)details
+-(IBAction)addToFavoritesButtonDidTouch:(id)sender
 {
-    [nameLabel setText:details.name];
+    FavoritesEntryModel* favModel = [[FavoritesEntryModel alloc] init];
+    favModel.restaurantId = restaurantId;
+    
+    [[FavoritesController getInstance] addFavorite:favModel];
+    
+    [self updateUI];
+//    [favModel release];
+}
+
+-(void)didRecieveRestaurantDetails:(RestaurantDetailsModel *)details
+{
+    //[nameLabel setText:details.name];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,12 +53,31 @@
 
 - (void)viewDidLoad
 {
+    [self updateUI];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)updateUI
+{
+    if (restaurantId != nil)
+    { 
+        [nameLabel setText:restaurantId];
+    
+        BOOL isFavorite = [[FavoritesController getInstance] favoriteExistsForRestaurantWithId:restaurantId];
+        
+        addToFavoritesButton.hidden = isFavorite;
+        favoriteIcon.hidden = !isFavorite;
+           
+    }
+}
+
 - (void)viewDidUnload
 {
+    [addToFavoritesButton release];
+    addToFavoritesButton = nil;
+    [favoriteIcon release];
+    favoriteIcon = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -64,6 +91,8 @@
 
 - (void)dealloc {
     [nameLabel release];
+    [addToFavoritesButton release];
+    [favoriteIcon release];
     [super dealloc];
 }
 @end

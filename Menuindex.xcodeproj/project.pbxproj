@@ -14,6 +14,10 @@
 		137D1F73144B25D5007ADA9E /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137D1F72144B25D5007ADA9E /* FilterView.xib */; };
 		137D1F76144B89CE007ADA9E /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137D1F75144B89CD007ADA9E /* FilterViewController.m */; };
 		13841716144F45FF00B07869 /* Favorites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13841715144F45FF00B07869 /* Favorites.plist */; };
+		1384171A144F492400B07869 /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13841719144F492400B07869 /* FavoritesController.m */; };
+		1384171D144F4D5300B07869 /* FavoritesEntryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384171C144F4D5300B07869 /* FavoritesEntryModel.m */; };
+		1384172014536E2300B07869 /* Star-Favorite-ByNagaya.png in Resources */ = {isa = PBXBuildFile; fileRef = 1384171F14536E2300B07869 /* Star-Favorite-ByNagaya.png */; };
+		13841724145379CA00B07869 /* FavoritesTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13841723145379CA00B07869 /* FavoritesTableCellController.m */; };
 		139AEB8B144CCEBF00FA1CD3 /* SearchFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */; };
 		13BC20A614479B8500A615D9 /* RestaurantDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */; };
 		13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */; };
@@ -33,14 +37,14 @@
 		13BFEB2B1443ABD50090B7D9 /* MenuindexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 13BFEB2A1443ABD50090B7D9 /* MenuindexLogo.png */; };
 		13BFEB2F1443AE020090B7D9 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BFEB2D1443AE020090B7D9 /* SearchResultsViewController.m */; };
 		13BFEB301443AE020090B7D9 /* SearchResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFEB2E1443AE020090B7D9 /* SearchResultsView.xib */; };
-		13E81DBA144494B90035F897 /* DetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DAF144494B80035F897 /* DetailsModel.m */; };
+		13E81DBA144494B90035F897 /* RestaurantDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DAF144494B80035F897 /* RestaurantDetailsModel.m */; };
 		13E81DBB144494B90035F897 /* MenuCardEntryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DB1144494B90035F897 /* MenuCardEntryModel.m */; };
 		13E81DBC144494B90035F897 /* MenuCardGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DB3144494B90035F897 /* MenuCardGroupModel.m */; };
 		13E81DBD144494B90035F897 /* MenuCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DB5144494B90035F897 /* MenuCardModel.m */; };
 		13E81DBE144494B90035F897 /* SearchResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DB7144494B90035F897 /* SearchResultModel.m */; };
 		13E81DBF144494B90035F897 /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DB9144494B90035F897 /* SearchService.m */; };
-		13E81DC51444C4010035F897 /* SearchResultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13E81DC41444C4010035F897 /* SearchResultTableCell.xib */; };
-		13E81DC81444C7C80035F897 /* SearchResultTableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DC71444C7C80035F897 /* SearchResultTableViewCellController.m */; };
+		13E81DC51444C4010035F897 /* TableCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13E81DC41444C4010035F897 /* TableCells.xib */; };
+		13E81DC81444C7C80035F897 /* SearchResultTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E81DC71444C7C80035F897 /* SearchResultTableCellController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,14 @@
 		137D1F74144B89CD007ADA9E /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		137D1F75144B89CD007ADA9E /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		13841715144F45FF00B07869 /* Favorites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Favorites.plist; sourceTree = "<group>"; };
+		13841718144F492400B07869 /* FavoritesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesController.h; sourceTree = "<group>"; };
+		13841719144F492400B07869 /* FavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesController.m; sourceTree = "<group>"; };
+		1384171B144F4D5300B07869 /* FavoritesEntryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesEntryModel.h; sourceTree = "<group>"; };
+		1384171C144F4D5300B07869 /* FavoritesEntryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesEntryModel.m; sourceTree = "<group>"; };
+		1384171F14536E2300B07869 /* Star-Favorite-ByNagaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-Favorite-ByNagaya.png"; sourceTree = "<group>"; };
+		13841722145379CA00B07869 /* FavoritesTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableCellController.h; sourceTree = "<group>"; };
+		13841723145379CA00B07869 /* FavoritesTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableCellController.m; sourceTree = "<group>"; };
+		1384172514538C8100B07869 /* FavoritesTableCellControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableCellControllerDelegate.h; sourceTree = "<group>"; };
 		139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewDelegate.h; sourceTree = "<group>"; };
 		139AEB89144CCEBF00FA1CD3 /* SearchFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFilterModel.h; sourceTree = "<group>"; };
 		139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFilterModel.m; sourceTree = "<group>"; };
@@ -88,8 +100,8 @@
 		13BFEB2D1443AE020090B7D9 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		13BFEB2E1443AE020090B7D9 /* SearchResultsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsView.xib; sourceTree = "<group>"; };
 		13CDA10C1448A04300C5BFD7 /* Menuindex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Menuindex.entitlements; sourceTree = "<group>"; };
-		13E81DAE144494B80035F897 /* DetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsModel.h; sourceTree = "<group>"; };
-		13E81DAF144494B80035F897 /* DetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsModel.m; sourceTree = "<group>"; };
+		13E81DAE144494B80035F897 /* RestaurantDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailsModel.h; sourceTree = "<group>"; };
+		13E81DAF144494B80035F897 /* RestaurantDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailsModel.m; sourceTree = "<group>"; };
 		13E81DB0144494B80035F897 /* MenuCardEntryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCardEntryModel.h; sourceTree = "<group>"; };
 		13E81DB1144494B90035F897 /* MenuCardEntryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCardEntryModel.m; sourceTree = "<group>"; };
 		13E81DB2144494B90035F897 /* MenuCardGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCardGroupModel.h; sourceTree = "<group>"; };
@@ -101,9 +113,9 @@
 		13E81DB8144494B90035F897 /* SearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchService.h; sourceTree = "<group>"; };
 		13E81DB9144494B90035F897 /* SearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchService.m; sourceTree = "<group>"; };
 		13E81DC21444A5150035F897 /* SearchServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchServiceDelegate.h; sourceTree = "<group>"; };
-		13E81DC41444C4010035F897 /* SearchResultTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultTableCell.xib; sourceTree = "<group>"; };
-		13E81DC61444C7C80035F897 /* SearchResultTableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewCellController.h; sourceTree = "<group>"; };
-		13E81DC71444C7C80035F897 /* SearchResultTableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewCellController.m; sourceTree = "<group>"; };
+		13E81DC41444C4010035F897 /* TableCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCells.xib; sourceTree = "<group>"; };
+		13E81DC61444C7C80035F897 /* SearchResultTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableCellController.h; sourceTree = "<group>"; };
+		13E81DC71444C7C80035F897 /* SearchResultTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableCellController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,13 +133,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		137D1F66144AD193007ADA9E /* Map Flow */ = {
+		137D1F66144AD193007ADA9E /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				13BFEB151443A1360090B7D9 /* MapViewController.h */,
 				13BFEB161443A1360090B7D9 /* MapViewController.m */,
 			);
-			name = "Map Flow";
+			name = Map;
 			sourceTree = "<group>";
 		};
 		137D1F6D144AE44B007ADA9E /* Map */ = {
@@ -141,6 +153,38 @@
 				137D1F6F144B00C7007ADA9E /* AnnotationMapDelegate.h */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		13841717144F488600B07869 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				13BFEB251443A2FF0090B7D9 /* FavoritesViewController.h */,
+				13BFEB261443A3000090B7D9 /* FavoritesViewController.m */,
+				13841722145379CA00B07869 /* FavoritesTableCellController.h */,
+				13841723145379CA00B07869 /* FavoritesTableCellController.m */,
+				13841718144F492400B07869 /* FavoritesController.h */,
+				13841719144F492400B07869 /* FavoritesController.m */,
+				1384172514538C8100B07869 /* FavoritesTableCellControllerDelegate.h */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		1384171E144F7CB400B07869 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				13BC20A314479B8500A615D9 /* RestaurantDetailsViewController.h */,
+				13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */,
+			);
+			name = Restaurant;
+			sourceTree = "<group>";
+		};
+		1384172114536E2900B07869 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				13BFEB2A1443ABD50090B7D9 /* MenuindexLogo.png */,
+				1384171F14536E2300B07869 /* Star-Favorite-ByNagaya.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		13BFEAEE1443A1360090B7D9 = {
@@ -177,11 +221,11 @@
 				13CDA10C1448A04300C5BFD7 /* Menuindex.entitlements */,
 				13BFEB0C1443A1360090B7D9 /* MenuindexAppDelegate.h */,
 				13BFEB0D1443A1360090B7D9 /* MenuindexAppDelegate.m */,
-				13BFEB241443A2430090B7D9 /* View Controllers */,
+				13BFEB241443A2430090B7D9 /* Controller */,
 				137D1F6D144AE44B007ADA9E /* Map */,
 				13E81DC31444A56A0035F897 /* Service */,
 				13E81DC1144494C20035F897 /* Model */,
-				13BFEB231443A2100090B7D9 /* Nibs */,
+				13BFEB231443A2100090B7D9 /* View */,
 				13BFEB041443A1360090B7D9 /* Supporting Files */,
 			);
 			path = Menuindex;
@@ -190,7 +234,7 @@
 		13BFEB041443A1360090B7D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				13BFEB2A1443ABD50090B7D9 /* MenuindexLogo.png */,
+				1384172114536E2900B07869 /* Images */,
 				13BFEB051443A1360090B7D9 /* Menuindex-Info.plist */,
 				13BFEB061443A1360090B7D9 /* InfoPlist.strings */,
 				13BFEB091443A1360090B7D9 /* main.m */,
@@ -200,7 +244,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13BFEB231443A2100090B7D9 /* Nibs */ = {
+		13BFEB231443A2100090B7D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				13BFEB0F1443A1360090B7D9 /* MainWindow.xib */,
@@ -209,46 +253,44 @@
 				13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */,
 				13BFEB271443A3000090B7D9 /* FavoritesView.xib */,
 				13BFEB2E1443AE020090B7D9 /* SearchResultsView.xib */,
-				13E81DC41444C4010035F897 /* SearchResultTableCell.xib */,
+				13E81DC41444C4010035F897 /* TableCells.xib */,
 				137D1F72144B25D5007ADA9E /* FilterView.xib */,
 			);
-			name = Nibs;
+			name = View;
 			sourceTree = "<group>";
 		};
-		13BFEB241443A2430090B7D9 /* View Controllers */ = {
+		13BFEB241443A2430090B7D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				13BFEB311443AE190090B7D9 /* Search Flow */,
-				137D1F66144AD193007ADA9E /* Map Flow */,
-				13BFEB251443A2FF0090B7D9 /* FavoritesViewController.h */,
-				13BFEB261443A3000090B7D9 /* FavoritesViewController.m */,
-				13BC20A314479B8500A615D9 /* RestaurantDetailsViewController.h */,
-				13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */,
+				13BFEB311443AE190090B7D9 /* Search */,
+				137D1F66144AD193007ADA9E /* Map */,
+				13841717144F488600B07869 /* Favorites */,
+				1384171E144F7CB400B07869 /* Restaurant */,
 			);
-			name = "View Controllers";
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		13BFEB311443AE190090B7D9 /* Search Flow */ = {
+		13BFEB311443AE190090B7D9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				137D1F74144B89CD007ADA9E /* FilterViewController.h */,
+				137D1F75144B89CD007ADA9E /* FilterViewController.m */,
+				139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */,
 				13BFEB121443A1360090B7D9 /* SearchViewController.h */,
 				13BFEB131443A1360090B7D9 /* SearchViewController.m */,
 				13BFEB2C1443AE020090B7D9 /* SearchResultsViewController.h */,
 				13BFEB2D1443AE020090B7D9 /* SearchResultsViewController.m */,
-				13E81DC61444C7C80035F897 /* SearchResultTableViewCellController.h */,
-				13E81DC71444C7C80035F897 /* SearchResultTableViewCellController.m */,
-				137D1F74144B89CD007ADA9E /* FilterViewController.h */,
-				137D1F75144B89CD007ADA9E /* FilterViewController.m */,
-				139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */,
+				13E81DC61444C7C80035F897 /* SearchResultTableCellController.h */,
+				13E81DC71444C7C80035F897 /* SearchResultTableCellController.m */,
 			);
-			name = "Search Flow";
+			name = Search;
 			sourceTree = "<group>";
 		};
 		13E81DC1144494C20035F897 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				13E81DAE144494B80035F897 /* DetailsModel.h */,
-				13E81DAF144494B80035F897 /* DetailsModel.m */,
+				13E81DAE144494B80035F897 /* RestaurantDetailsModel.h */,
+				13E81DAF144494B80035F897 /* RestaurantDetailsModel.m */,
 				13E81DB0144494B80035F897 /* MenuCardEntryModel.h */,
 				13E81DB1144494B90035F897 /* MenuCardEntryModel.m */,
 				13E81DB2144494B90035F897 /* MenuCardGroupModel.h */,
@@ -259,6 +301,8 @@
 				13E81DB7144494B90035F897 /* SearchResultModel.m */,
 				139AEB89144CCEBF00FA1CD3 /* SearchFilterModel.h */,
 				139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */,
+				1384171B144F4D5300B07869 /* FavoritesEntryModel.h */,
+				1384171C144F4D5300B07869 /* FavoritesEntryModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -329,10 +373,11 @@
 				13BFEB291443A3000090B7D9 /* FavoritesView.xib in Resources */,
 				13BFEB2B1443ABD50090B7D9 /* MenuindexLogo.png in Resources */,
 				13BFEB301443AE020090B7D9 /* SearchResultsView.xib in Resources */,
-				13E81DC51444C4010035F897 /* SearchResultTableCell.xib in Resources */,
+				13E81DC51444C4010035F897 /* TableCells.xib in Resources */,
 				13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */,
 				137D1F73144B25D5007ADA9E /* FilterView.xib in Resources */,
 				13841716144F45FF00B07869 /* Favorites.plist in Resources */,
+				1384172014536E2300B07869 /* Star-Favorite-ByNagaya.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,19 +394,22 @@
 				13BFEB171443A1360090B7D9 /* MapViewController.m in Sources */,
 				13BFEB281443A3000090B7D9 /* FavoritesViewController.m in Sources */,
 				13BFEB2F1443AE020090B7D9 /* SearchResultsViewController.m in Sources */,
-				13E81DBA144494B90035F897 /* DetailsModel.m in Sources */,
+				13E81DBA144494B90035F897 /* RestaurantDetailsModel.m in Sources */,
 				13E81DBB144494B90035F897 /* MenuCardEntryModel.m in Sources */,
 				13E81DBC144494B90035F897 /* MenuCardGroupModel.m in Sources */,
 				13E81DBD144494B90035F897 /* MenuCardModel.m in Sources */,
 				13E81DBE144494B90035F897 /* SearchResultModel.m in Sources */,
 				13E81DBF144494B90035F897 /* SearchService.m in Sources */,
-				13E81DC81444C7C80035F897 /* SearchResultTableViewCellController.m in Sources */,
+				13E81DC81444C7C80035F897 /* SearchResultTableCellController.m in Sources */,
 				13BC20A614479B8500A615D9 /* RestaurantDetailsViewController.m in Sources */,
 				137D1F5F1449E604007ADA9E /* ResultParser.m in Sources */,
 				137D1F69144AD1BC007ADA9E /* RestaurantMapAnnotation.m in Sources */,
 				137D1F6C144AE26D007ADA9E /* AnnotationMap.m in Sources */,
 				137D1F76144B89CE007ADA9E /* FilterViewController.m in Sources */,
 				139AEB8B144CCEBF00FA1CD3 /* SearchFilterModel.m in Sources */,
+				1384171A144F492400B07869 /* FavoritesController.m in Sources */,
+				1384171D144F4D5300B07869 /* FavoritesEntryModel.m in Sources */,
+				13841724145379CA00B07869 /* FavoritesTableCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

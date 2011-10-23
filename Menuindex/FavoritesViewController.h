@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FavoritesController.h"
+#import "FavoritesTableCellControllerDelegate.h"
 
-@interface FavoritesViewController : UIViewController
+@interface FavoritesViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, FavoritesTableCellControllerDelegate>
+{
+    IBOutlet UITableView *favoritesTableView;
+}
+
+- (IBAction)nearbyButtonDidTouch:(id)sender;
+- (IBAction)allButtonDidTouch:(id)sender;
 
 @end
