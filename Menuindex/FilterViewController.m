@@ -10,14 +10,14 @@
 
 @implementation FilterViewController
 
-@synthesize  delegate;
+@synthesize  delegate, searchFilterModel;
 
 - (id) init
 {
     self = [super initWithNibName:@"FilterView" bundle:nil];
     if (self)
     {
-        
+        searchFilterModel = [[SearchFilterModel alloc] init];
     }   
     
     return self;
@@ -26,23 +26,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc ] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(filterApply:)];
-    
-    self.navigationItem.rightBarButtonItem = doneButton;
-    self.navigationItem.leftBarButtonItem = nil;
+}
+
+- (IBAction)closeButtonDidTouch:(id)sender
+{
+    [delegate filterShouldClose];
+}
+
+- (IBAction)filterUIChanged:(id)sender 
+{
+    [self updateFilterModel];
+    [delegate filterDidUpdate:searchFilterModel]; 
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    
+}
+
+-(void)updateFilterModel
+{
+    searchFilterModel.hasTakeaway = hasTakeawaySwitch.isOn;
+    searchFilterModel.isOpen = isOpenSwitch.isOn;
 }
 
 - (void)filterApply:(id)sender
 {
-    SearchFilterModel* sfm = [[SearchFilterModel alloc] init];
-    sfm.hasTakeaway = hasTakeawaySwitch.enabled;
-    [delegate filterDidApply:sfm];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -50,24 +58,19 @@
     return [self init];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)dealloc 
 {
-    // Drawing code
-}
-*/
-
-- (IBAction)takeawaySwitchDidEdit:(id)sender {
-}
-- (void)dealloc {
     [hasTakeawaySwitch release];
+    [isOpenSwitch release];
     [super dealloc];
 }
-- (void)viewDidUnload {
+
+- (void)viewDidUnload 
+{
     [hasTakeawaySwitch release];
     hasTakeawaySwitch = nil;
+    [isOpenSwitch release];
+    isOpenSwitch = nil;
     [super viewDidUnload];
 }
 @end

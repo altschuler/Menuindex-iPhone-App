@@ -16,7 +16,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self) 
+    {
         self.title = @"Favoritter";
     }
     return self;
@@ -76,6 +77,8 @@
     RestaurantDetailsViewController*  rdvc = [[RestaurantDetailsViewController alloc] initWithNibName:@"RestaurantDetailsView" bundle:nil restaurantId:favModel.restaurantId];
     
     [self.navigationController pushViewController:rdvc animated:YES];
+    
+    [rdvc release];
 }
 
 - (IBAction)nearbyButtonDidTouch:(id)sender

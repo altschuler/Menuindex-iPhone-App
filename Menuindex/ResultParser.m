@@ -30,6 +30,8 @@
     [xmlParser setDelegate:self];
     [xmlParser parse];
     
+    [rawResponse release];
+    
     return resultList;
 }
 
@@ -53,8 +55,11 @@
     {   
         srm.restaurantId = [self stringFromDict:attributeDict key:@"RestaurantId"];
         srm.name = [self stringFromDict:attributeDict key:@"Name"];
+        srm.ID = [self stringFromDict:attributeDict key:@"RestaurantId"];
         
         [resultList addObject:srm];
+        
+        [srm release];
     }
     else if ([elementName isEqualToString:@"Address"])
     {
@@ -66,6 +71,17 @@
         srm.latitude = [[self stringFromDict:attributeDict key:@"Latitude"] doubleValue];
         srm.longitude = [[self stringFromDict:attributeDict key:@"Longitude"] doubleValue]; 
         
+        [srm updateLocatables];
+    }
+    else if ([elementName isEqualToString:@"Phone"])
+    {
+        SearchResultModel* srm = [resultList lastObject];
+        srm.telephoneNumber = [self stringFromDict:attributeDict key:@"Number"];    
+        srm.telephoneCountryCode = [self stringFromDict:attributeDict key:@"CountryCode"];
+        srm.telephoneNote = [self stringFromDict:attributeDict key:@"Note"];
+        srm.addressCity = [self stringFromDict:attributeDict key:@"City"]; 
+        
+        [srm updateLocatables];
     }
 }
 

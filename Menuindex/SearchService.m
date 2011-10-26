@@ -29,17 +29,17 @@
 
 -(void) getDetailsFromId:(NSString *)resultId
 {
-    NSString* searchQuery = [[NSString alloc] initWithFormat:@"http://10.13.37.124:7538/data/restaurant/%@",resultId];
-    NSURL* searchURL = [NSURL URLWithString:searchQuery];
-    
-    NSString* searchResponse = [[NSString alloc] initWithContentsOfURL:searchURL];
-    
-    NSArray* results = [resultParser parseDetailsString:searchResponse];
-    
-    [delegate didRecieveSearchResult:results];
+//    NSString* searchQuery = [[NSString alloc] initWithFormat:@"http://10.13.37.124:7538/data/restaurant/%@",resultId];
+//    NSURL* searchURL = [NSURL URLWithString:searchQuery];
+//    
+//    NSString* searchResponse = [[NSString alloc] initWithContentsOfURL:searchURL];
+//    
+//    NSArray* results = [resultParser parseDetailsString:searchResponse];
+//    
+//    [delegate didRecieveSearchResult:results];
 }
-
--(void)searchForQuery:(NSString *)query
+ 
+- (void) searchForQuery:(NSString*)query withFilter:(SearchFilterModel*)filter
 {
    // NSString* searchQuery = [[NSString alloc] initWithFormat:@"http://10.13.37.124:7538/data/search/%@",query];
   //  NSURL* searchURL = [NSURL URLWithString:searchQuery];
@@ -53,7 +53,14 @@
     
     NSArray* results = [resultParser parseResultString:searchResponse];
     
+    
     [delegate didRecieveSearchResult:results];
+}
+
+-(void)dealloc
+{
+    [resultParser release];
+    [super dealloc];
 }
 
 @end

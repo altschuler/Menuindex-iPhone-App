@@ -29,9 +29,14 @@
 @synthesize latitude;
 @synthesize longitude;
 
+@synthesize title;
+@synthesize subtitle;
+@synthesize ID;
+
 - (id)initWithTitle:(NSString*)titleOrNil andResultId:(NSString*)resultIdOrNil
 {
-    if ([self init]) {
+    if ([self init]) 
+    {
         restaurantId = resultIdOrNil;
         name = titleOrNil;
     }
@@ -47,6 +52,12 @@
     }
     
     return self;
+}
+
+-(void)updateLocatables
+{
+    title = name;
+    subtitle = [NSString stringWithFormat:@"%@ %@, %@", addressStreet, addressHouseNumber, telephoneNumber];
 }
 
 @end

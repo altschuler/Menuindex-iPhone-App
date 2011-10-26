@@ -38,6 +38,8 @@
     [searchTextField resignFirstResponder];
     
     [self.navigationController pushViewController:searchResultVC animated:YES];
+
+    [searchResultVC release];
     
     return YES;
 }

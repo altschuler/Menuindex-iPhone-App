@@ -15,21 +15,9 @@
 #import "RestaurantMapAnnotation.h"
 #import "FilterViewController.h"
 #import "SearchFilterModel.h"
+#import "NavigationTopView.h"
 
 @implementation SearchResultsViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-        
-    annotationMap = [[AnnotationMap alloc] initWithMapViewFrame:resultsTableView.frame delegate:self];
-    [self.view insertSubview:annotationMap.annotationMapView atIndex:20];
-    annotationMap.annotationMapView.alpha = 0;
-    
-    //Do we have a query to search for?
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
-}
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchQuery:(NSString *)searchQueryOrNil
 {
@@ -37,6 +25,20 @@
     if (self)
     {
         self.title = @"Søgeresultat";
+        
+        NSArray* viewsInNib = [[NSBundle mainBundle] loadNibNamed:@"Misc" owner:nil options:nil];
+        
+        NavigationTopView* navigationTopView;
+        for (id view in viewsInNib) 
+        {
+            if ([view isKindOfClass:[NavigationTopView class]])
+            {
+                navigationTopView = view;
+                break;
+            }
+        }
+        self.navigationItem.titleView = navigationTopView;
+        [navigationTopView release];
         
         mapAnnotations = [[NSMutableArray alloc] init];
         
@@ -46,7 +48,7 @@
         initialSearchQuery = searchQueryOrNil;
         [initialSearchQuery retain];
         
-        UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filtrér" style:UIBarButtonItemStylePlain target:self action:@selector(showFilterModal)];          
+        UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filtrér" style:UIBarButtonItemStylePlain target:self action:@selector(showFilterView)];          
         self.navigationItem.rightBarButtonItem = filterButton;
         
         [filterButton release];
@@ -54,32 +56,79 @@
     return self;
 }
 
--(void)filterDidApply:(SearchFilterModel*)filter
-{
-    NSLog(@"Set filter: %d", filter.hasTakeaway);
-}
-
--(void)showFilterModal
-{
-    FilterViewController* filterViewController = [[FilterViewController alloc] init];
+#pragma mark - View delegate methods
+- (void)viewDidLoad
+{   
+    annotationMap = [[AnnotationMap alloc] initWithMapViewFrame:resultsTableView.frame delegate:self];
     
-    [filterViewController setDelegate:self];
+    [self.view insertSubview:annotationMap.annotationMapView atIndex:20];
+    annotationMap.annotationMapView.alpha = 0;
     
-    [self.navigationController pushViewController:filterViewController animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [super viewDidLoad];
 }
 
--(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-{
-    //NSLog(view.description);
-}
-
--(void)viewDidAppear:(BOOL)animated
+-(void) viewDidAppear:(BOOL)animated
 {
     if (initialSearchQuery != nil)
     {
         [searchTextField setText:initialSearchQuery];
-        [searchService searchForQuery:initialSearchQuery];
+        [searchService searchForQuery:initialSearchQuery withFilter:filterViewController.searchFilterModel];
+        initialSearchQuery = nil;
     }
+}
+
+#pragma mark - Filter delegate methods
+-(void)filterDidUpdate:(SearchFilterModel*)filter
+{
+    //TODO apply to search
+}
+
+-(void)filterShouldClose
+{
+    [UIView beginAnimations:nil context:NULL];
+    
+    CGPoint pos = filterViewController.view.center;
+    pos.x = -filterViewController.view.bounds.size.width/2;
+    filterViewController.view.center = pos;
+    
+    [UIView commitAnimations];
+    
+    [filterViewController.view removeFromSuperview];
+}
+
+-(void)showFilterView
+{   
+    if (filterViewController == nil)
+    {
+        filterViewController = [[FilterViewController alloc] init];
+        
+        [filterViewController setDelegate:self];
+        CGPoint initPos = filterViewController.view.center;
+        initPos.x = -filterViewController.view.bounds.size.width/2;
+        filterViewController.view.center = initPos;
+        
+        [self.view insertSubview:filterViewController.view atIndex:20];
+    }
+    
+    [UIView beginAnimations:nil context:NULL];
+    
+    CGPoint pos = filterViewController.view.center;
+    pos.x = filterViewController.view.bounds.size.width/2;
+    filterViewController.view.center = pos;
+    
+    [UIView commitAnimations];
+}
+
+#pragma mark - Map delegate methods
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationWithId:(NSString *)annotationId
+{
+    RestaurantDetailsViewController*  rdvc = [[RestaurantDetailsViewController alloc] initWithNibName:@"RestaurantDetailsView" bundle:nil restaurantId:annotationId];
+    
+    [self.navigationController pushViewController:rdvc animated:YES];
+    
+    [rdvc release];
 }
 
 - (IBAction)mapViewButtonDidTouch:(id)sender 
@@ -126,13 +175,14 @@
     
     [self.navigationController pushViewController:rdvc animated:YES];
     
+    [rdvc release];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [searchTextField resignFirstResponder];
     
-    [searchService searchForQuery:textField.text];
+    [searchService searchForQuery:textField.text withFilter:filterViewController.searchFilterModel];
     
     return YES;
 }
@@ -162,6 +212,8 @@
     cell.nameLabel.text = searchResultModel.name;
     NSString* address = [[NSString alloc] initWithFormat:@"%@ %@, %@ %@",searchResultModel.addressStreet,searchResultModel.addressHouseNumber,searchResultModel.addressZip,searchResultModel.addressCity];
     cell.adressLabel.text = address;
+
+    [address release];
     
     return cell;
 }
@@ -180,9 +232,9 @@
     searchTextField = nil;
     [resultsTableView release];
     resultsTableView = nil;
+    [searchService release];
+    searchService = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -191,7 +243,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)dealloc {
+- (void)dealloc 
+{
+    [searchService release];
     [searchTextField release];
     [resultsTableView release];
     [super dealloc];

@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "MapInfoBoxView.h"
 
 @implementation MapViewController
 
@@ -23,9 +24,9 @@
     return self;
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationWithId:(NSString*)annotationId
 {
-    
+    NSLog(@"ID: %@", annotationId);
 }
 
 - (IBAction)centerButtonDidTouch:(id)sender

@@ -10,6 +10,6 @@
 
 @protocol AnnotationMapDelegate <NSObject>
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view;
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationWithId:(NSString*)annotationId;
 
 @end

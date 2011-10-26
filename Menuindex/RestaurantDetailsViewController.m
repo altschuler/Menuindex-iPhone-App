@@ -9,6 +9,7 @@
 #import "RestaurantDetailsViewController.h"
 #import "SearchResultModel.h"
 #import "FavoritesController.h"
+#import "MenuCardViewController.h"
 
 @implementation RestaurantDetailsViewController
 
@@ -31,6 +32,8 @@
     favModel.restaurantId = restaurantId;
     
     [[FavoritesController getInstance] addFavorite:favModel];
+    
+    [favModel release];
     
     [self updateUI];
 //    [favModel release];
@@ -70,6 +73,21 @@
         favoriteIcon.hidden = !isFavorite;
            
     }
+}
+
+- (IBAction)menuButtonDidTouch:(id)sender 
+{
+    MenuCardViewController* menuCard = [[MenuCardViewController alloc] init];
+    [self.navigationController presentModalViewController:menuCard animated:YES];
+    [menuCard release];
+}
+
+- (IBAction)infoButtonDidTouch:(id)sender 
+{
+}
+
+- (IBAction)mapButtonDidTouch:(id)sender 
+{
 }
 
 - (void)viewDidUnload

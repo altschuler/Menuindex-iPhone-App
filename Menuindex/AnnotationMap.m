@@ -9,16 +9,18 @@
 #import "AnnotationMap.h"
 #import "RestaurantMapAnnotation.h"
 #import "Locatable.h"
+#import "MapInfoBoxView.h"
+
 @implementation AnnotationMap
 
 @synthesize annotationMapView;
 @synthesize annotations;
 
-- (id)initWithMapViewFrame:(CGRect)frame delegate:(id <AnnotationMapDelegate>)delegateOrNil
+- (id)initWithMapViewFrame:(CGRect)frame delegate:(id<AnnotationMapDelegate>)delegateOrNil
 {
     self = [super init];
-    if (self) {
-        
+    if (self) 
+    {    
         annotationMapView = [[MKMapView alloc] initWithFrame:frame];
         [annotationMapView setDelegate:self];
         
@@ -32,7 +34,7 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    [delegate mapView:mapView didSelectAnnotationView:view];
+    
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -40,7 +42,24 @@
     MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RestaurantAnnotation"];
     annView.pinColor = 1;
     annView.animatesDrop = TRUE;
+    annView.canShowCallout = YES;
+    
+    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [rightButton addTarget:self
+                    action:@selector(annotationSelected:)
+          forControlEvents:UIControlEventTouchUpInside];
+    annView.rightCalloutAccessoryView = rightButton;
+    
+    [rightButton release];
+    
     return annView;
+}
+
+-(void)annotationSelected:(id)sender
+{
+   id annView = [[sender superview] superview];
+    RestaurantMapAnnotation* rma = [annView annotation];
+    [delegate mapView:annotationMapView didSelectAnnotationWithId:rma.ID];
 }
 
 -(void) setNewAnnotations:(NSArray *)objects
@@ -58,7 +77,12 @@
     {
         CLLocationCoordinate2D coord = {.latitude = loc.latitude, .longitude = loc.longitude};
         RestaurantMapAnnotation* r = [[RestaurantMapAnnotation alloc] initWithCoordinate:coord];
+        r.title = loc.title;
+        r.subtitle = loc.subtitle;
+        r.ID = loc.ID;
         [annotations addObject:r];
+        
+        [r release];
     }
     
     [annotationMapView addAnnotations:annotations];

@@ -10,6 +10,7 @@
 #import "RestaurantDetailsModel.h"
 #import "SearchServiceDelegate.h"
 #import "ResultParser.h"
+#import "SearchFilterModel.h"
 
 @interface SearchService : NSObject <NSXMLParserDelegate>
 {
@@ -19,7 +20,7 @@
 
 @property (retain) id <SearchServiceDelegate> delegate;
 
-- (void) searchForQuery:(NSString*)query;
+- (void) searchForQuery:(NSString*)query withFilter:(SearchFilterModel*)filter;
 
 - (void) getDetailsFromId:(NSString*)resultId;
 

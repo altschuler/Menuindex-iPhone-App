@@ -11,11 +11,15 @@
 
 @interface RestaurantMapAnnotation : NSObject <MKAnnotation>
 {
-    CLLocationCoordinate2D coordinate;
+    NSString* ID;
     NSString* title;
     NSString* subtitle;
+    CLLocationCoordinate2D coordinate;
 }
 
+@property (nonatomic, copy) NSString* ID;
+@property (nonatomic, copy) NSString* title;
+@property (nonatomic, copy) NSString* subtitle;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 - (id) initWithCoordinate:(CLLocationCoordinate2D)coord;

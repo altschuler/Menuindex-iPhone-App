@@ -31,6 +31,11 @@
     
     double latitude;
     double longitude;
+    
+    //Locatables
+    NSString* title;
+    NSString* subtitle;
+    NSString* ID;
 }
 
 @property (nonatomic) double latitude;
@@ -51,6 +56,10 @@
 @property (nonatomic, copy) NSString* telephoneNumber;
 @property (nonatomic, copy) NSString* telephoneCountryCode;
 @property (nonatomic, copy) NSString* telephoneNote;
+
+@property (nonatomic, copy) NSString* title;
+@property (nonatomic, copy) NSString* subtitle;
+@property (nonatomic, copy) NSString* ID;
 
  
 @end

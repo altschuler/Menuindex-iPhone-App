@@ -25,6 +25,12 @@
 
 -(void)updateUI;
 
+- (IBAction)menuButtonDidTouch:(id)sender;
+
+- (IBAction)infoButtonDidTouch:(id)sender;
+
+- (IBAction)mapButtonDidTouch:(id)sender;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil restaurantId:(NSString*)restaurantIdOrNil;
 
 - (IBAction)addToFavoritesButtonDidTouch:(id)sender;

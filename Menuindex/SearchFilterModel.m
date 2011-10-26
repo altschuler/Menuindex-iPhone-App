@@ -11,6 +11,7 @@
 @implementation SearchFilterModel
 
 @synthesize hasTakeaway;
+@synthesize isOpen;
 
 - (id)init
 {
@@ -21,6 +22,11 @@
     }
     
     return self;
+}
+
+-(void) logFilter
+{
+    NSLog(@"hasTakeaway: %d\nisOpen: %d", hasTakeaway, isOpen);
 }
 
 @end

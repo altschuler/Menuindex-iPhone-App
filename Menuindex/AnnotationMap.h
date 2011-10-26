@@ -24,4 +24,6 @@
 
 -(void) fitZoomToAnnotations;
 -(void) setNewAnnotations:(NSArray*)objects;
+-(void)annotationSelected:(id)sender;
+
 @end

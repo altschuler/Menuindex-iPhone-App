@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1334F5131454222B003136EF /* Misc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1334F5121454222B003136EF /* Misc.xib */; };
+		1334F5161454232B003136EF /* Icon-Close.png in Resources */ = {isa = PBXBuildFile; fileRef = 1334F5151454232B003136EF /* Icon-Close.png */; };
+		1334F5191454242B003136EF /* MapInfoBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1334F5181454242B003136EF /* MapInfoBoxView.m */; };
+		1352524B1457009E008519B0 /* NavigationTopButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1352524A1457009E008519B0 /* NavigationTopButton.png */; };
+		1352524F14570113008519B0 /* NavigationTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352524E14570113008519B0 /* NavigationTopView.m */; };
 		137D1F5F1449E604007ADA9E /* ResultParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 137D1F5E1449E604007ADA9E /* ResultParser.m */; };
 		137D1F65144A59E6007ADA9E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137D1F64144A59E6007ADA9E /* MapKit.framework */; };
 		137D1F69144AD1BC007ADA9E /* RestaurantMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 137D1F68144AD1BC007ADA9E /* RestaurantMapAnnotation.m */; };
@@ -16,8 +21,10 @@
 		13841716144F45FF00B07869 /* Favorites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13841715144F45FF00B07869 /* Favorites.plist */; };
 		1384171A144F492400B07869 /* FavoritesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13841719144F492400B07869 /* FavoritesController.m */; };
 		1384171D144F4D5300B07869 /* FavoritesEntryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384171C144F4D5300B07869 /* FavoritesEntryModel.m */; };
-		1384172014536E2300B07869 /* Star-Favorite-ByNagaya.png in Resources */ = {isa = PBXBuildFile; fileRef = 1384171F14536E2300B07869 /* Star-Favorite-ByNagaya.png */; };
+		1384172014536E2300B07869 /* Icon-Favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 1384171F14536E2300B07869 /* Icon-Favorite.png */; };
 		13841724145379CA00B07869 /* FavoritesTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13841723145379CA00B07869 /* FavoritesTableCellController.m */; };
+		1384172914539DA900B07869 /* MenuCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384172714539DA900B07869 /* MenuCardViewController.m */; };
+		1384172A14539DA900B07869 /* MenuCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1384172814539DA900B07869 /* MenuCardView.xib */; };
 		139AEB8B144CCEBF00FA1CD3 /* SearchFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */; };
 		13BC20A614479B8500A615D9 /* RestaurantDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */; };
 		13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BC20A514479B8500A615D9 /* RestaurantDetailsView.xib */; };
@@ -48,6 +55,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1334F5121454222B003136EF /* Misc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Misc.xib; sourceTree = "<group>"; };
+		1334F5151454232B003136EF /* Icon-Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Close.png"; sourceTree = "<group>"; };
+		1334F5171454242B003136EF /* MapInfoBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapInfoBoxView.h; sourceTree = "<group>"; };
+		1334F5181454242B003136EF /* MapInfoBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapInfoBoxView.m; sourceTree = "<group>"; };
+		1352524A1457009E008519B0 /* NavigationTopButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationTopButton.png; sourceTree = "<group>"; };
+		1352524D14570113008519B0 /* NavigationTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTopView.h; sourceTree = "<group>"; };
+		1352524E14570113008519B0 /* NavigationTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTopView.m; sourceTree = "<group>"; };
 		137D1F5D1449E604007ADA9E /* ResultParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultParser.h; sourceTree = "<group>"; };
 		137D1F5E1449E604007ADA9E /* ResultParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultParser.m; sourceTree = "<group>"; };
 		137D1F64144A59E6007ADA9E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -65,10 +79,13 @@
 		13841719144F492400B07869 /* FavoritesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesController.m; sourceTree = "<group>"; };
 		1384171B144F4D5300B07869 /* FavoritesEntryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesEntryModel.h; sourceTree = "<group>"; };
 		1384171C144F4D5300B07869 /* FavoritesEntryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesEntryModel.m; sourceTree = "<group>"; };
-		1384171F14536E2300B07869 /* Star-Favorite-ByNagaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-Favorite-ByNagaya.png"; sourceTree = "<group>"; };
+		1384171F14536E2300B07869 /* Icon-Favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Favorite.png"; sourceTree = "<group>"; };
 		13841722145379CA00B07869 /* FavoritesTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableCellController.h; sourceTree = "<group>"; };
 		13841723145379CA00B07869 /* FavoritesTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableCellController.m; sourceTree = "<group>"; };
 		1384172514538C8100B07869 /* FavoritesTableCellControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableCellControllerDelegate.h; sourceTree = "<group>"; };
+		1384172614539DA900B07869 /* MenuCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCardViewController.h; sourceTree = "<group>"; };
+		1384172714539DA900B07869 /* MenuCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCardViewController.m; sourceTree = "<group>"; };
+		1384172814539DA900B07869 /* MenuCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCardView.xib; sourceTree = "<group>"; };
 		139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewDelegate.h; sourceTree = "<group>"; };
 		139AEB89144CCEBF00FA1CD3 /* SearchFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFilterModel.h; sourceTree = "<group>"; };
 		139AEB8A144CCEBF00FA1CD3 /* SearchFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFilterModel.m; sourceTree = "<group>"; };
@@ -133,6 +150,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1352524914562C37008519B0 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				137D1F74144B89CD007ADA9E /* FilterViewController.h */,
+				137D1F75144B89CD007ADA9E /* FilterViewController.m */,
+				139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
+		1352524C145700F6008519B0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1352524D14570113008519B0 /* NavigationTopView.h */,
+				1352524E14570113008519B0 /* NavigationTopView.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		137D1F66144AD193007ADA9E /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +187,8 @@
 				137D1F6B144AE26D007ADA9E /* AnnotationMap.m */,
 				137D1F6E144AEB5C007ADA9E /* Locatable.h */,
 				137D1F6F144B00C7007ADA9E /* AnnotationMapDelegate.h */,
+				1334F5171454242B003136EF /* MapInfoBoxView.h */,
+				1334F5181454242B003136EF /* MapInfoBoxView.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -174,6 +212,8 @@
 			children = (
 				13BC20A314479B8500A615D9 /* RestaurantDetailsViewController.h */,
 				13BC20A414479B8500A615D9 /* RestaurantDetailsViewController.m */,
+				1384172614539DA900B07869 /* MenuCardViewController.h */,
+				1384172714539DA900B07869 /* MenuCardViewController.m */,
 			);
 			name = Restaurant;
 			sourceTree = "<group>";
@@ -181,8 +221,10 @@
 		1384172114536E2900B07869 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1352524A1457009E008519B0 /* NavigationTopButton.png */,
+				1334F5151454232B003136EF /* Icon-Close.png */,
 				13BFEB2A1443ABD50090B7D9 /* MenuindexLogo.png */,
-				1384171F14536E2300B07869 /* Star-Favorite-ByNagaya.png */,
+				1384171F14536E2300B07869 /* Icon-Favorite.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -255,6 +297,8 @@
 				13BFEB2E1443AE020090B7D9 /* SearchResultsView.xib */,
 				13E81DC41444C4010035F897 /* TableCells.xib */,
 				137D1F72144B25D5007ADA9E /* FilterView.xib */,
+				1384172814539DA900B07869 /* MenuCardView.xib */,
+				1334F5121454222B003136EF /* Misc.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -262,10 +306,12 @@
 		13BFEB241443A2430090B7D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1352524C145700F6008519B0 /* Navigation */,
 				13BFEB311443AE190090B7D9 /* Search */,
 				137D1F66144AD193007ADA9E /* Map */,
 				13841717144F488600B07869 /* Favorites */,
 				1384171E144F7CB400B07869 /* Restaurant */,
+				1352524914562C37008519B0 /* Filter */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -273,9 +319,6 @@
 		13BFEB311443AE190090B7D9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				137D1F74144B89CD007ADA9E /* FilterViewController.h */,
-				137D1F75144B89CD007ADA9E /* FilterViewController.m */,
-				139AEB87144CC67B00FA1CD3 /* FilterViewDelegate.h */,
 				13BFEB121443A1360090B7D9 /* SearchViewController.h */,
 				13BFEB131443A1360090B7D9 /* SearchViewController.m */,
 				13BFEB2C1443AE020090B7D9 /* SearchResultsViewController.h */,
@@ -377,7 +420,11 @@
 				13BC20A714479B8500A615D9 /* RestaurantDetailsView.xib in Resources */,
 				137D1F73144B25D5007ADA9E /* FilterView.xib in Resources */,
 				13841716144F45FF00B07869 /* Favorites.plist in Resources */,
-				1384172014536E2300B07869 /* Star-Favorite-ByNagaya.png in Resources */,
+				1384172014536E2300B07869 /* Icon-Favorite.png in Resources */,
+				1384172A14539DA900B07869 /* MenuCardView.xib in Resources */,
+				1334F5131454222B003136EF /* Misc.xib in Resources */,
+				1334F5161454232B003136EF /* Icon-Close.png in Resources */,
+				1352524B1457009E008519B0 /* NavigationTopButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +457,9 @@
 				1384171A144F492400B07869 /* FavoritesController.m in Sources */,
 				1384171D144F4D5300B07869 /* FavoritesEntryModel.m in Sources */,
 				13841724145379CA00B07869 /* FavoritesTableCellController.m in Sources */,
+				1384172914539DA900B07869 /* MenuCardViewController.m in Sources */,
+				1334F5191454242B003136EF /* MapInfoBoxView.m in Sources */,
+				1352524F14570113008519B0 /* NavigationTopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

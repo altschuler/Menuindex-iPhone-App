@@ -10,7 +10,6 @@
 #import "SearchViewController.h"
 #import "MapViewController.h"
 #import "FavoritesViewController.h"
-
 #import "FavoritesController.h"
 
 @implementation MenuindexAppDelegate
@@ -41,11 +40,21 @@
     UIViewController* favVC = [[FavoritesViewController alloc] initWithNibName:@"FavoritesView" bundle:nil];
     UINavigationController* favNC = [[UINavigationController alloc] initWithRootViewController:favVC];
     
-    self.tabBarController.viewControllers = [[NSArray alloc] initWithObjects:searchNC,mapNC,favNC, nil];
+    NSArray* viewCons = [[NSArray alloc] initWithObjects:searchNC,mapNC,favNC, nil];
+    
+    self.tabBarController.viewControllers = viewCons;
     
     //for debugging. clear the favorites file.
    // [[FavoritesController getInstance] writeFavoritesToDisk];
     
+    
+    [viewCons release];
+    [mapVC release];
+    [favVC release];
+    [searchVC release];
+    [mapNC release];
+    [favNC release];
+    [searchNC release];
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

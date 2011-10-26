@@ -12,6 +12,9 @@
 @protocol FilterViewDelegate <NSObject>
 
 @required
--(void)filterDidApply:(SearchFilterModel*)filter;
+-(void)filterDidUpdate:(SearchFilterModel*)filter;
+
+@required
+-(void)filterShouldClose;
 
 @end

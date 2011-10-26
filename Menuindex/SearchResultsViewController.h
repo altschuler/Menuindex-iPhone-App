@@ -12,6 +12,7 @@
 #import "SearchServiceDelegate.h"
 #import "SearchService.h"
 #import "AnnotationMap.h"
+#import "FilterViewController.h"
 
 @interface SearchResultsViewController : UIViewController<UITableViewDataSource, 
 UITableViewDelegate, 
@@ -23,6 +24,7 @@ FilterViewDelegate>
     IBOutlet UITextField *searchTextField;
     IBOutlet UITableView *resultsTableView;
     
+    FilterViewController* filterViewController;
     SearchService* searchService;
     NSArray* searchResults;
     NSString* initialSearchQuery;
@@ -36,6 +38,6 @@ FilterViewDelegate>
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil searchQuery:(NSString*)searchQueryOrNil;
 
--(void)showFilterModal;
+-(void)showFilterView;
 
 @end

@@ -70,10 +70,12 @@ static FavoritesController* sharedSingleton;
         FavoritesEntryModel* favModel = [[FavoritesEntryModel alloc] initWithDict:favDict];
         
         [favoritesList addObject:favModel];
+        
+        [favModel release];
     }
     
-    //    [path release];
-    //    [favRaw release];
+    [path release];
+    [favRaw release];
     
     return YES;
 }
@@ -99,8 +101,8 @@ static FavoritesController* sharedSingleton;
         NSLog(@"Write failed");
     }
     
-    //    [path release];
-    //    [favArr release];
+    [path release];
+    [favArr release];
     
     return writeSuccess;
 }

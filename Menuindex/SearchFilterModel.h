@@ -11,8 +11,12 @@
 @interface SearchFilterModel : NSObject
 {
     BOOL hasTakeaway;
+    BOOL isOpen;
 }
 
 @property (nonatomic) BOOL hasTakeaway;
+@property (nonatomic) BOOL isOpen;
+
+-(void)logFilter;
 
 @end

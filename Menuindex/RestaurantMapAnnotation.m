@@ -10,12 +10,16 @@
 
 @implementation RestaurantMapAnnotation
 
+@synthesize ID;
+@synthesize title;
+@synthesize subtitle;
 @synthesize coordinate;
 
 - (id)init
 {
     self = [super init];
-    if (self) {
+    if (self) 
+    {
         // Initialization code here.
     }
     
